@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Landing from './pages/public/Landing'
 import Login from './pages/public/Login'
+import Signup from './pages/public/Signup'
 
 // Placeholder for future pages
 const ComingSoon = ({ title }) => (
@@ -18,11 +19,14 @@ function AppRoutes() {
       {/* Public Routes */}
       <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<ComingSoon title="Sign Up" />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/forgot-password" element={<ComingSoon title="Forgot Password" />} />
+      <Route path="/terms" element={<ComingSoon title="Terms of Service" />} />
+      <Route path="/privacy" element={<ComingSoon title="Privacy Policy" />} />
       
       {/* Authenticated Routes */}
       <Route path="/dashboard" element={<ComingSoon title="Dashboard" />} />
+      <Route path="/welcome" element={<ComingSoon title="Welcome Setup" />} />
       
       {/* 404 Route */}
       <Route path="*" element={<ComingSoon title="Page Not Found" />} />
