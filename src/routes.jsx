@@ -3,6 +3,12 @@ import Landing from './pages/public/Landing'
 import Login from './pages/public/Login'
 import Signup from './pages/public/Signup'
 import Dashboard from './pages/dashboard/Dashboard'
+import CreateChatbot from './pages/dashboard/CreateChatbot'
+import Chatbots from './pages/dashboard/Chatbots'
+import ChatbotDetails from './pages/dashboard/ChatbotDetails'
+import UploadDocuments from './pages/dashboard/UploadDocuments'
+import ChatbotSettings from './pages/dashboard/ChatbotSettings'
+import TestChatbot from './pages/dashboard/TestChatbot'
 
 // Placeholder for future pages
 const ComingSoon = ({ title }) => (
@@ -28,13 +34,15 @@ function AppRoutes() {
       {/* Authenticated Routes */}
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/welcome" element={<ComingSoon title="Welcome Setup" />} />
-      <Route path="/chatbots" element={<ComingSoon title="Chatbots" />} />
-      <Route path="/chatbots/new" element={<ComingSoon title="Create New Chatbot" />} />
-      <Route path="/chatbots/:id" element={<ComingSoon title="Chatbot Details" />} />
-      <Route path="/chatbots/:id/settings" element={<ComingSoon title="Chatbot Settings" />} />
+      <Route path="/chatbots" element={<Chatbots />} />
+      <Route path="/chatbots/new" element={<CreateChatbot />} />
+      <Route path="/chatbots/:id" element={<ChatbotDetails />} />
+      <Route path="/chatbots/:id/settings" element={<ChatbotSettings />} />
+      <Route path="/chatbots/:id/test" element={<TestChatbot />} />
+      <Route path="/chatbots/:id/sources/add" element={<ComingSoon title="Add Data Source" />} />
+      <Route path="/upload" element={<UploadDocuments />} />
       <Route path="/analytics" element={<ComingSoon title="Analytics" />} />
       <Route path="/settings" element={<ComingSoon title="Settings" />} />
-      <Route path="/upload" element={<ComingSoon title="Upload Documents" />} />
       
       {/* 404 Route */}
       <Route path="*" element={<ComingSoon title="Page Not Found" />} />
